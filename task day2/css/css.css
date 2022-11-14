@@ -1,0 +1,44 @@
+nav{
+    background-color: #403e3e;
+    padding: 11px 0px;
+}
+
+nav ul{padding-left: 0px;}
+
+nav ul li{
+    display: inline;
+    padding: 27px 20px;
+}
+
+nav ul li:hover{background-color: red;}
+
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+nav img{
+    float: right;
+    margin-top: -61px;
+    margin-right: 1px;
+}
+
+.img2 img{width: 100%;}
+
+.copy p{
+    color: #164848;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* road map page */
+
+h1{padding-bottom: 30px;}
+
+.cms h3{color: red;}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

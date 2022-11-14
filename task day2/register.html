@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/css.css">
+    <link rel="stylesheet" href="css/register.css"> 
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="roadMap.html">Road Map</a></li>
+            <li><a href="register.html">Registration Form</a></li>
+            <li><a href="https://www.iti.gov.eg/">Contact</a></li>
+        </ul>
+        <img src="img/logo.png">
+    </nav>
+
+    <form action="https://www.iti.gov.eg/" method="post">
+        <h3>Register - Create Acount</h3>
+        <div>Field Marked with <span>*</span> are compulsory fields</div>
+
+        <table>
+            <tr>
+                <td class="first">
+                    <span>*</span> Your Name
+                </td>
+                <td>
+                    <input type="text" name="name" class="name">
+                </td>
+            </tr>
+            <tr>
+                <td class="first">
+                    <span>*</span> E-Mail ID
+                </td>
+                <td>
+                    <input type="email" name="email" class="email" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="first"> Alternate E-Mail ID</td>
+                <td>
+                    <input type="email" name="altemail" class="email">
+                </td>
+            </tr>
+            <tr>
+                <td class="first">Your Phone</td>
+                <td>
+                    <span>country code - city code - phone Number</span><br>
+                    <input type="number" name="countryCode" class="num n1">-
+                    <input type="number" name="cityCode" class="num n2">- 
+                    <input type="number" name="phone" class="num n3">
+                </td>
+            </tr>
+            <tr>
+                <td class="first">Mobile Phone</td>
+                <td>
+                    <input type="text" name="mobile" style="width:280px">
+                </td>
+            </tr>
+            <tr>
+                <td class="first">
+                    <span>*</span> Your Postal Address
+                </td>
+                <td>
+                    <textarea required></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="first">
+                    <span>*</span> Country
+                </td>
+                <td>
+                    <select required>
+                        <option selected disabled value="select">
+                            --------------------- Select One ---------------------</option>
+                        <option>Egypt</option>
+                        <option>United State</option>
+                        <option>Barazeil</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td class="first">
+                    <span>*</span> Password
+                </td>
+                <td>
+                    <input type="password" name="pass" required>
+                </td>
+            </tr>
+            <tr>
+                <td class="first">
+                    <span>*</span> Re - Enter Password
+                </td>
+                <td>
+                    <input type="password" name="re-pass" required>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="checkbox"> 
+                    I accept the
+                    <a href="#">Terms od Use</a>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="submit" class="btn">Continue >></button>
+                    <button type="reset" class="btn">Reset</button>
+                </td>
+            </tr>
+        </table>
+
+    </form>
+
+    <hr>
+
+    <div class="copy">
+        <p>Copyright 2022 by Noha Salah &reg;.All Rights Reserved</p>
+    </div>
+
+</body>
+</html>
