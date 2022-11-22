@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex1</title>
+</head>
+<body>
+    <script>
+
+        let age = prompt("Enter your Age");
+
+        while( age != null){
+            
+            if(age != ""){       
+                
+                if(!isNaN(Number(age))){
+
+                    if(age <= 0){
+                        alert("Enter Valid Number for your Age");
+                    }
+                    else{
+                        if(age <= 10){
+                           alert("you are Child");
+                        } 
+                        else if(age <= 18){
+                          alert("you are Teenager");
+                        }
+                        else if( age <= 50){
+                           alert("you are Grown Up");
+                        }
+                        else {
+                            alert("you are Old");
+                        }
+                    }
+                }
+
+                else{
+                    alert("Enter Valid Number for your Age");
+                }
+        
+            }
+
+            age = prompt("Enter your Age");
+        }
+        
+    </script>
+</body>
+</html>

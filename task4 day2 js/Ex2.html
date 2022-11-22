@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex2</title>
+</head>
+<body>
+    <script>
+
+        check();
+
+        function check(){
+            let anyString = prompt('Enter any String to count your Vowels');
+
+            if(anyString != ""){
+                if(!anyString.match(/[0-9]/ig)){
+                   let arr = anyString.split('');
+
+                   let vowels = arr.join(' , ');
+
+                   alert(`The Vowels are ( ${vowels} )` +'\n'+ `and The Number of Vowels is ${arr.length}`);
+                }
+                else{
+                    alert(`Sorry :( \n Enter String not a Number`);
+                    check();
+                }
+            }
+            else{
+                alert("it's Empty :( " +'\n'+"try again");
+                check();
+            }
+
+        }
+
+    </script>
+</body>
+</html>

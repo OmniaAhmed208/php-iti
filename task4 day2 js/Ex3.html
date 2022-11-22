@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex3</title>
+</head>
+<body>
+    <script>
+
+        check();
+
+        function check(){
+            let time = Number(prompt("Enter Number From 0 to 24 to get your time"));
+
+            if(time != ""){
+                if(time >= 0 && time <= 24){
+
+                    if(time >= 0 && time <=12){
+                        alert("Time is " +time+ " AM");
+                    } 
+                    
+                    else {
+                        let diff = time - 12;
+                        alert("Time is " + diff + " PM")
+                    }
+                }
+                else{
+                    time = Number(prompt("Enter Number From 0 to 24 to get your time"));
+                    check();
+                }
+            }
+
+            else{
+                alert("it's Empty :( " +'\n'+"try again");
+                check();
+            }
+        }
+
+    </script>
+</body>
+</html>
