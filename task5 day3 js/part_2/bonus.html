@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part_2 bonus</title>
+</head>
+<body>
+    <script>
+    
+    let ask = prompt("Enter The Name of The Shape you want to calc Area for");
+    check();
+
+    function check(){
+        if(ask.match(/circle/ig)){
+            let r = Number(prompt('enter the radius'));
+            alert(Math.PI * Math.pow(r,2));
+        }
+
+        else if(ask.match(/triangle/ig)){
+            let b = Number(prompt('enter the base')); 
+            let h = Number(prompt('enter the height'));
+            alert(0.5 * b * h);
+        }
+
+        else if(ask.match(/square/ig)){
+            let a = Number(prompt('enter the Length of side'));
+            alert(Math.pow(a,2));
+        }
+
+        else if(ask.match(/reqtangle/ig)){
+            let i = Number(prompt('enter the length')); 
+            let w = Number(prompt('enter the width'));
+            alert(i * w);
+        }
+
+        else if(ask.match(/parallelogram/ig)){
+            let b = Number(prompt('enter the base')); 
+            let h = Number(prompt('enter the height'));
+            alert(b * h);
+        }
+
+        else if(ask.match(/trapezium/ig)){
+            let a = Number(prompt('enter the first length'));
+            let b = Number(prompt('enter the second length')); 
+            let h = Number(prompt('enter the height'));
+            alert(0.5 * (a + b) * h);
+        }
+
+        else if(ask.match(/ellipse/ig)){
+            let a = Number(prompt('enter the minor axis')); 
+            let b = Number(prompt('enter the major axis'));
+            alert(Math.PI * a * b);
+        }
+
+        else{
+            ask = prompt('entre the valid shape');
+            check();
+        }
+    }
+
+    </script>
+</body>
+</html>
