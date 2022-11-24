@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part_1 Lap1 Login</title>
+</head>
+<body>
+    <script>
+        let userName = prompt("Username ?");
+        let password = prompt("Enter the Password");
+
+        if(userName == "admin" && password == "421$$"){
+            alert("Welcome login success :)");
+        }
+        
+        if(userName != "admin" || password != "421$$"){
+
+            if(userName != "admin" && password != "421$$"){
+                alert("Username and Password are Wrong");
+            }
+
+            else if(userName != "admin"){
+                alert("Username is Wrong");
+            } 
+            
+            else {
+                alert("Password is Wrong");
+            }
+        }
+    </script>
+</body>
+</html>

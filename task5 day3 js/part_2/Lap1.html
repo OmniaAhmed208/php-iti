@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part_2 Lap1</title>
+</head>
+<body>
+    <script>
+        // let numbers = prompt("Enter numbers in the same input like this => 1,2,3,4 OR 1234 \n to get the Sum or the Average");
+        
+        // let type = prompt('which type of the Result you want? sum or average :)');
+
+        // let arr = numbers.split("");
+        // let sum = 0;
+
+        // let x = (arr.join()).match(/[0-9]/ig);  // because if the user enter numbers 1234 or 1,2,3,4
+            
+        // for(let i=0 ; i < x.length; i++){
+        //     sum += parseInt(x[i]);
+        // }
+
+        // checkType();
+
+        // function checkType(){
+        //     if(type == 'sum'){
+        //         alert(`sum = ${sum}`);
+        //     }
+            
+        //     if(type == 'average'){
+        //         alert(`average = ${sum / x.length}`)
+        //     }
+        // }
+
+        let numbers = Number(prompt("How many Numbers you wants to get the Sum and the Average?"));
+
+        let arr = [];
+        let sum = 0;
+
+        for(let i= 1; i<= numbers ; i++){
+            let values = Number(prompt(`Enter Number ${i}`));
+
+            arr.push(values);
+        }
+
+        for(let i=0; i<arr.length;i++){
+            sum += arr[i];
+        }
+
+        let type = prompt('which type of the Result you want? sum or average :)');
+
+        if(type == 'sum'){
+            alert(`sum = ${sum}`);
+        }
+            
+        if(type == 'average'){
+            alert(`average = ${sum / arr.length}`);
+        }
+        
+
+    </script>
+</body>
+</html>

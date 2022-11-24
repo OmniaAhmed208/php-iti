@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part_2 Lap2</title>
+</head>
+<body>
+    <script>
+        let stop = false, name, phone, sure, phoneApp = {}, arr = [];
+
+        let ask = prompt('you want to add or search ?');
+
+        asking();
+        addToArray();
+
+        function asking(){
+
+            if(ask.match(/add/ig)){
+                add();
+            }
+            else if(ask.match(/search/ig)){ 
+                searching();
+            }
+            else {
+                alert('write add or search');
+                ask = prompt('you want to add or search ?');
+                asking();
+            }
+
+        }
+
+        function add(){
+
+            while(!stop){
+            
+                name = prompt('enter the name');
+                phone = prompt('enter the phone');
+                addToArray();
+
+                sure = confirm('Do you want to add another Oreder?');
+
+                if(sure == false){
+                    stop = true;
+                }
+                else{
+                    ask = prompt('you want to add or search ?');
+                    asking();
+                }
+            }
+        }
+
+        function addToArray(){
+            phoneApp = {
+                theName : name,
+                thePhone : phone
+            }
+            arr.push(phoneApp);
+        }
+    
+        function searching(){
+
+            let search = prompt('Enter the name or the Phone you want to search');
+
+            for(let i=0 ; i< arr.length; i++){
+
+                if(search === arr[i].theName || search === arr[i].thePhone){
+                    alert(`The Name: ${arr[i].theName} \n and The Phone is ${arr[i].thePhone}`);
+                }
+
+                if(search != arr[i].theName && search != arr[i].thePhone){
+                    alert(`This not Valid or not Saved in The App :(`)
+                }
+            }
+            
+            sure = confirm('Do you want to make another Order?');
+
+            if(sure == false){
+                stop = true;
+            }
+            else{
+                ask = prompt('you want to Add or Search ?');
+                asking();
+            }
+        }
+        
+    </script>
+</body>
+</html>

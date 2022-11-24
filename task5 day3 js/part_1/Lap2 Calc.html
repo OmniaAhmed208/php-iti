@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part_1 Lap2 Calc</title>
+</head>
+<body>
+    <script>
+
+    let n1 = Number(prompt("Enter First Number"));
+    let opt = prompt("Enter an Operation ( + , - , * , / , % )");
+    let n2 = Number(prompt("Enter Second Number"));
+    result = 0;
+
+    switch(opt){
+        case '+':
+            result = n1 + n2;
+            alert(result);
+            break;
+        case '-':
+            result = n1 - n2;
+            alert(result);
+            break;
+        case '*':
+            result = n1 * n2;
+            alert(result);
+            break;
+        case '/':
+            result = n1 / n2;
+            alert(result);
+            break;
+        case '%':
+            result = n1 % n2;
+            alert(result);
+            break;    
+    }
+
+    // =============== Bonus ============
+
+    let stopOperation = false;
+
+    while(!stopOperation){
+        let opt2 = prompt('you can make another opertation \n Enter + , - , / , * , %');
+
+        if(opt2 == null){
+            stopOperation = true;
+        }
+        else{
+            let num2 = Number(prompt('enter second Number'));
+            switch(opt2){
+                case '+':
+                    result += num2;
+                    alert(result);
+                    break; 
+                case '-':
+                    result -= num2;
+                    alert(result);
+                    break; 
+                case '*':
+                    result *= num2;
+                    alert(result);
+                    break; 
+                case '/':
+                    result /= num2;
+                    alert(result);
+                    break; 
+                case '%':
+                    result %= num2;
+                    alert(result);
+                    break;        
+            }
+        }
+    }
+
+
+
+    </script>
+</body>
+</html>
