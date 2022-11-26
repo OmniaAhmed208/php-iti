@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Part_3</title>
+</head>
+<body>
+    <script>
+        // ====================================== Ex 1
+
+        console.log('############## Ex 1'); // object methods
+
+        // 1 object.assign() ==> copy from one or more source objects to a target object.
+        const target = { a: 1, b: 2 };
+        const source = { b: 4, c: 5 };
+        const returnedTarget = Object.assign(target, source);
+        console.log(target); //{a: 1, b: 4, c: 5}
+
+
+        const obj = {
+            name: 'ali',
+            age: 26,
+            getPrint : function () {console.log(`my salary is ${this.salary} and my name is ${this.name}`)} 
+        } 
+
+        // 2 object.keys() ==> return an array form the keys of the object
+        // OR object.getPropertyName()
+        console.log(Object.keys(obj)); // ['name', 'age', 'getPrint']
+        console.log(Object.getOwnPropertyNames(obj)); // ['name', 'age', 'getPrint']
+
+
+        // 3 object.values() ==> return an array form the values of the object
+        console.log(Object.values(obj));
+
+
+        // 4 Object.hasOwn() ==> check the object has this property or No 
+       console.log(Object.hasOwn(obj, 'name')) // yes
+
+
+        // 5 object.create() ==> Creates a new object from another object with it's properties
+        const me = Object.create(obj);
+        me.salary = 6000;
+        me.name = 'ahmed';
+        me.getPrint(); // my salary is 6000 and my name is ahmed
+
+
+        // 6 Object.fromEntries() ==> transforms a list of key-value into an object.
+        const entries = [ ['name', 'ahmed'] , ['age', 42] ];
+        const obj2 = Object.fromEntries(entries);
+        console.log(obj2); //{name: 'ahmed', age: 42}
+
+
+        // 7 Object.entries() ==> return array from a given object
+        let entries2 = {
+            name:'ali',
+            age: 10
+        }
+        console.log(Object.entries(entries2)); //[Array(2), Array(2)] ==> 0: (2) ['name', 'ali'] ==> 1: (2) ['age', 10]
+
+
+        // 8 Object.getPrototypeOf() ==> return the values which internal the specific object
+        const prototype1 = {a:10};
+        const obj3 = Object.create(prototype1);
+        console.log(obj3); // a:10
+        console.log(Object.getPrototypeOf(obj3) === prototype1); // true
+
+
+        // 9 object.toString() ==> return a string
+        function fruit(name) {
+            this.name = name;
+        }
+        const fruit1 = new fruit('Apple');
+
+        fruit.prototype.toString = function fruitToString() {
+            return `${this.name}`;
+        };
+
+       console.log(fruit1.toString()); // Apple
+
+
+       // 10 object.is() ==> check if the 2 values have the same value
+       let value1 = 3;
+       let value2 = 5;
+       console.log(Object.is(value1, value2)); // false
+
+
+        // ====================================== Ex 2
+
+        console.log('############## Ex 2'); // Array methods
+
+        let array = [1, 'egypt', 5, 3, 'm', 'e', 10];
+
+        // 1- array.map() ==> make a new array and put the items if true only
+        let item1 = array.map((item)=> (!isNaN(item)) ? item : false);
+        console.log(item1); // [1, false, 5, 3, false, false, 10]
+
+
+        // 2- array.filter() ==> make a new array and put the items if true only
+        let item2 = array.filter((item)=> item = !isNaN(item));
+        console.log(item2); // [1, 5, 3, 10]
+
+
+        // 3- array.slice() ==> cut the Array from index i want
+        console.log(array.slice(2,6)); // cut from index (2) and stop in (6 - 1) ==> [5, 3, 'm', 'e']  
+
+
+        // 4- array.toString() ==> converts an array to a string with comma separated
+        console.log(array.toString()); // 1,egypt,5,3,m,e,10
+
+
+        // 5 array.unshift() ==> to  add a new element to an array in the first
+        array.unshift('country');
+        console.log(array); // ['country', 1, 'egypt', 5, 3, 'm', 'e', 10]
+
+
+        // 6 array.push() ==> to  add a new element to an array in the end
+        array.push('country');
+        console.log(array); //['country', 1, 'egypt', 5, 3, 'm', 'e', 10, 'country']
+
+
+        // 7 array.shift() ==> to  remove the element from an array from the first
+        array.shift(); 
+        console.log(array); //[1, 'egypt', 5, 3, 'm', 'e', 10, 'country'] 
+
+
+        // 8 array.pop() ==> to  remove the element from an array from the end
+        array.pop();
+        console.log(array); // [1, 'egypt', 5, 3, 'm', 'e', 10]
+
+
+        // 9 array.sort() ==> sort the array ==> not return new array
+        array.sort();
+        console.log(array); // [1, 10, 3, 5, 'e', 'egypt', 'm']        
+
+
+        // 10 array.splice(0,0,'ele1','ele2') ==> to start from index 0 and delete 1 element from first and add 'ele1' & 'ele2' in the first
+        array.splice(0,0,'ele1','ele2');
+        console.log(array); // ['ele1', 'ele2', 1, 10, 3, 5, 'e', 'egypt', 'm']
+
+        // ====================================== Ex 3
+
+        console.log('############ Ex 3');
+
+        // closure ==> lexical environment ==> combination of functions gives you access to an outer function's scope from an inner function
+        let x = 10;
+        function fun1(){
+            let y = 5;
+            fun2();
+            function fun2(){
+                let z = 5;
+                let res = x + y + z;
+                console.log(res);
+            }
+        }
+        fun1();
+
+    </script>
+</body>
+</html>
