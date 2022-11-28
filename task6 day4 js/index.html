@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task4</title>
+</head>
+<body>
+    <script>
+
+        //=========== constructor function =============
+
+       console.log('======== Constructor ========');
+
+        function Person1 (fullName, money, sleepMood, healthRate) {
+            this.fullName = fullName;
+            this.money = money;
+            this.sleepMood = sleepMood;
+            this.healthRate = healthRate;
+
+            this.sleep = function(hours){
+            if(!hours) {
+                    return this.sleepMood
+                }
+                if(hours == 7){
+                    return this.sleepMood = 'happy';
+                } else if(hours < 7){
+                    return this.sleepMood = 'tired';
+                } else if(hours > 7){
+                    return this.sleepMood = 'lazy';
+                }
+                else {return `Invalid Mood`}
+            }
+
+            this.eat = function(meals) {
+                if(!meals){
+                    return `${this.healthRate}`
+                }
+
+                if(meals == 3){
+                    return `${this.healthRate = 100} healthRate`;
+                }
+                else if(meals == 2){
+                    return `${this.healthRate = 75} healthRate`;
+                }
+                else if(meals == 1){
+                    return `${this.healthRate = 50} healthRate`;
+                }
+                else {
+                    return `Not Valid this value ${this.healthRate}`;
+                }
+            }
+            this.buy = function(items) {
+                if(items >= 1){
+                    return `${this.money - (items*10)} LE`;
+                }
+                else {
+                    return `Enter a valid number of items`;
+                } 
+            }
+        }
+
+        let p1 = new Person1('Omnia', 100, 'happy' , 'rating');
+        console.log(p1);
+        console.log(p1.eat(2));
+        console.log(p1.buy(1));
+        console.log(p1.sleep(5));
+
+
+
+        // ========================= classes ====================
+
+        console.log('======== Classes ========');
+        
+        class Person2{
+            constructor(fullName, money, sleepMood, healthRate){
+                this.fullName = fullName ;
+                this.money = money ;
+                this.sleepMood = sleepMood;
+                this.healthRate = healthRate;
+            }
+            sleep(hours){
+                if(hours == 7){
+                    return this.sleepMood = 'happy';
+                } else if(hours < 7){
+                    return this.sleepMood = 'tired';
+                } else if(hours > 7){
+                    return this.sleepMood = 'lazy';
+                }
+                else {return `Invalid Mood`}
+            }
+            eat(meals){
+                if(!meals){
+                    return `${this.healthRate} healthRate`
+                }
+
+                if(meals == 3){
+                    return `${this.healthRate = 100} healthRate`;
+                }
+                else if(meals == 2){
+                    return `${this.healthRate = 75} healthRate`;
+                }
+                else if(meals == 1){
+                    return `${this.healthRate = 50} healthRate`;
+                }
+                else {
+                    return `Not Valid this value ${this.healthRate}`;
+                }
+            }
+            buy(items){
+                if(items >= 1){
+                    return `${this.money - (items*10)} LE`;
+                }
+                else {
+                    return `Enter a valid number of items`;
+                } 
+            }
+        }
+        let p2 = new Person2('Omnia', 100, 'happy' , 'ratingHealth');
+        console.log(p2);
+
+        console.log(p2.eat(2));
+        console.log(p2.buy(1));
+        console.log(p2.sleep(5));
+
+
+        // ====================== OLOO ====================
+        
+        console.log('======== OLOO ========');
+
+        const Person3 = {
+            init (fullName, money, sleepMood, healthRate) {
+                this.fullName = fullName ;
+                this.money = money ;
+                this.sleepMood = sleepMood;
+                this.healthRate = healthRate;
+                
+                this.sleep = function(hours){
+                    if(!hours) {
+                        return this.sleepMood
+                    }
+                    if(hours == 7){
+                        return this.sleepMood = 'happy';
+                    } else if(hours < 7){
+                        return this.sleepMood = 'tired';
+                    } else if(hours > 7){
+                        return this.sleepMood = 'lazy';
+                    }
+                    else {return `Invalid Mood`}
+                }
+
+                this.eat = function(meals) {
+                    if(!meals){
+                        return `${this.healthRate}`
+                    }
+
+                    if(meals == 3){
+                        return `${this.healthRate = 100} healthRate`;
+                    }
+                    else if(meals == 2){
+                        return `${this.healthRate = 75} healthRate`;
+                    }
+                    else if(meals == 1){
+                        return `${this.healthRate = 50} healthRate`;
+                    }
+                    else {
+                        return `Not Valid this value ${this.healthRate}`;
+                    }
+                }
+                this.buy = function(items) {
+                    if(items >= 1){
+                        return `${this.money - (items*10)} LE`;
+                    }
+                    else {
+                        return `Enter a valid number of items`;
+                    } 
+                }
+                
+                return this
+            }
+        }
+
+        const p3 = Object.create(Person3).init('Omnia', 100, 'happy' , 'ratingHealth');
+        console.log(p3);
+
+        console.log(p3.eat(2));
+        console.log(p3.buy(1));
+        console.log(p3.sleep(5));
+        
+
+        //  ================== Factory functions =============
+
+        console.log('======== Factory Function ========');
+
+        function Person4(fullName, money, sleepMood, healthRate) {
+            return {
+                fullName,
+                money,
+                sleepMood,
+                healthRate,
+
+                sleep(hours){
+                    if(hours == 7){
+                        return this.sleepMood = 'happy';
+                    } else if(hours < 7){
+                        return this.sleepMood = 'tired';
+                    } else if(hours > 7){
+                        return this.sleepMood = 'lazy';
+                    }
+                    else {return `Invalid Mood`}
+                },
+               
+                eat(meals){
+                    if(!meals){
+                        return `${this.healthRate} healthRate`
+                    }
+
+                    if(meals == 3){
+                        return `${this.healthRate = 100} healthRate`;
+                    }
+                    else if(meals == 2){
+                        return `${this.healthRate = 75} healthRate`;
+                    }
+                    else if(meals == 1){
+                        return `${this.healthRate = 50} healthRate`;
+                    }
+                    else {
+                        return `Not Valid this value ${this.healthRate}`;
+                    }
+                },
+            
+                buy(items){
+                    if(items >= 1){
+                        return `${this.money - (items*10)} LE`;
+                    }
+                    else {
+                        return `Enter a valid number of items`;
+                    } 
+                }
+            };
+        }
+  
+        const p4 = Person4('Omnia', 100, 'happy' , 'ratingHealth');
+        console.log(p4);
+
+        console.log(p4.eat(2));
+        console.log(p4.buy(1));
+        console.log(p4.sleep(5));
+
+    </script>
+</body>
+</html>
