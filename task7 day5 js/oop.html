@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+</head>
+<body>
+    <script>
+       
+        let arr = [], array = [], theArray = [],stop=false;
+        let ask,ask2,ask3,ask4, name, age,workHours,salary, email, isManager;
+
+        alert('after full the information enter "q" to see your Result');
+        
+        asking();
+
+        class Employee{
+            constructor (id, email, workMood, salary, isManager){
+                this.id = id || 'unknown';
+                this.email = email || 'unknown';
+                this.workMood = workMood;
+                this.salary = salary || 1000;
+                this.isManager = isManager || false;
+                array.push(this)
+            }
+            
+            sleep(hours){
+                if(!hours){return this.workMood}
+
+                if(hours == 7){
+                    return this.workMood = 'happy';
+                } else if(hours < 7){
+                    return this.workMood = 'tired';
+                } else if(hours > 7){
+                    return this.workMood = 'lazy';
+                }
+                else {return `Invalid Mood`}
+            }
+
+            eat(meals){
+                if(meals == 3){
+                    return `${this.healthRate = 100} health Rate`;
+                }
+                else if(meals == 2){
+                    return `${this.healthRate = 75} health Rate`;
+                }
+                else if(meals == 1){
+                    return `${this.healthRate = 50} health Rate`;
+                }
+                else {
+                    return `Not Valid this value`;
+                }
+            }
+
+            buy(items){
+                if(items >= 1){
+                    return `${this.salary - (items*10)} LE`;
+                }
+                else {
+                    return `Enter a valid number of items`;
+                } 
+            }
+                  
+            work(hours){
+                if(!hours){return this.workMood}
+
+                if(hours == 8){
+                    return this.workMood = 'happy';
+                } else if(hours > 8){
+                    return this.workMood = 'tired';
+                } else if(hours < 8){
+                    return this.workMood = 'lazy';
+                }
+                else {return `Invalid Mood`}
+            }
+            
+        }
+
+        new Employee('a@y.com','a@y.com','tired',5000,true);
+        console.log(array);
+
+
+        class Office extends Employee{
+            constructor(id, email, workMood, salary, isManager, name,employees){
+                super(id, email, workMood, salary, isManager);
+                this.name = name;
+                this.employees = employees;
+                this.addToArray = function(){
+                    theArray.push(this);
+                };
+
+                this.addToArray();
+            }
+            
+            getAllEmployee(){
+                this.employees = array.length;
+                alert(`all current Employee ${this.employees}`);
+            }
+
+            getEmployee(name){
+                let d = false;
+
+                for(let i = 0; i<theArray.length; i++){
+                        
+                    if(name == theArray[i].name){
+                        if(theArray[i].isManager == true){
+                        d= true;
+                        }
+                        else{d=false}
+                    }
+                }
+                
+                if(d == true){
+
+                    for(let i = 0; i<theArray.length; i++){
+                        if(name == theArray[i].name){
+                            alert(`id = ${theArray[i].id} \n email = ${theArray[i].email} \n isManager = ${theArray[i].isManager} \n workMood = ${theArray[i].workMood}`)
+                        }
+                    }
+                }
+                    
+                else{
+                        
+                    for(let i = 0; i<theArray.length; i++){
+                        if(name == theArray[i].name){
+                            alert(`id = ${theArray[i].id} \n email = ${theArray[i].email} \n isManager = ${theArray[i].isManager} \n workMood = ${theArray[i].workMood} \n salary = ${theArray[i].salary}`)
+                        }
+                    }
+                }
+                    
+            }
+
+            hire(employee){
+                if(employee != null){
+                    if(ask2 == 'nrml'){
+                        alert(`${employee} is hired`);
+                    }
+                }
+            }
+
+            fire(employee){
+                if(employee != null){
+                    for(let i=0; i<theArray.length; i++){
+                        if(employee === theArray[i].name){
+                           let index = theArray.indexOf(theArray[i]);
+                           theArray.splice(index,1);
+                           alert("done it's fire");
+                        }
+                        if(employee != theArray[i].name){
+                           alert('not found');
+                           break;
+                        }
+                    }
+                }
+            }
+        }
+        new Office('ali@y.com','ali@y.com','happy',6000, true,'ali','20');
+        new Office('alia@y.com','alia@y.com','lazy',1000, false,'alia','20');
+
+
+        // functions
+        function asking(){
+            ask = prompt('to add press "add" \n or search press "search" \n or fetch press "fetch" \n or exit press "q"');
+
+            if(ask == 'add'){
+                ask2 = prompt('mngr or nrml');
+                if(ask2 == 'nrml'){
+                    isManager = false
+                }
+                if(ask2 == 'mngr'){
+                    isManager = true
+                }
+                adding();
+            }
+            if(ask == 'search'){
+                seaching();
+            }
+            if(ask == 'q'){
+                stop = true
+            }
+            if(ask == 'fire'){
+                fire();
+            }
+        }
+
+        function adding(){
+            while(!stop){
+                name = prompt('enter name');
+                age = prompt('enter age');
+                email = prompt('enter email');
+                salary = prompt('Enter Salary');
+                workHours = prompt('work Hours');
+                addToArr();
+                asking();
+            }
+        }
+
+        function addToArr(){
+            let info = {
+                name:name,
+                age:age,
+                email:email,
+                workHours:workHours,
+                salary:salary
+            }
+            arr.push(info);
+        }
+        
+        let e = new Employee(id=email,email,'happy',salary, isManager);
+        e.sleep(workHours);
+        
+        e = new Office (id=email,email,e.sleep(workHours),salary, isManager,name);
+        e.getAllEmployee();
+        e.getEmployee(ask3);
+        e.hire(name);
+        e.fire(ask4)
+
+        function seaching(){
+            ask3 = prompt('Enter Name that you want to search');
+            asking();
+        }
+
+        function fire(){
+            ask4 = prompt('Enter Name');
+            // asking();
+        }
+
+    </script>
+</body>
+</html>
