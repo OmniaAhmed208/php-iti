@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task3 Grid</title>
+    <style>
+        .container{
+            font-family: sans-serif;
+            display: grid;
+            grid-template-columns: repeat(3,8%);
+            grid-template-rows: 98px 200px 200px 98px;
+            text-align: center;
+            color: #fff;
+            text-transform: uppercase;
+            gap: 4px 3px;
+        }
+        .header,.footer{
+            background-color: rgb(164, 164, 226);
+            padding-top: 40px;
+            grid-column: span 12;
+        }
+        .d1, .d3{
+            background-color: rgb(218, 139, 36);
+            padding-top: 50px;
+            grid-column: span 3;
+            grid-row: span 2;
+        }
+        .d2{
+            background-color: rgb(129, 212, 81);
+            padding-top: 50px;
+            grid-column: span 6;
+            grid-row: span 2;
+        }
+
+        @media (max-width:992px) {
+            .container{
+                grid-template-rows: 100px 200px 300px 200px 100px;
+            }
+            .d1,.d2,.d3{
+                grid-column: span 12;
+                grid-row: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="d1">sideNav</div>
+        <div class="d2">main content</div>
+        <div class="d3">sideBar</div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+</html>

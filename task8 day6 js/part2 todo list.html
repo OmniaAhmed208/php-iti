@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="">
+    <title>Part2 Todo List</title>
+    <link rel="stylesheet" href="css/part2.css">
+</head>
+<body>
+    <div class="container">
+        <form method="get">
+            <label>Task</label>
+            <input type="text" placeholder="task name" id="task">
+            <input type="button" value="Add" id="btn">
+        </form>
+    </div>
+    
+    <script>
+        
+        let btn = document.querySelector('#btn');
+        let input = document.querySelector('#task');
+        let form = document.querySelector('form');
+
+        btn.onclick = function(){
+
+            if(input.value != ""){
+                let div = document.createElement('div');
+                div.className = 'parent';
+                let p = document.createElement('p');
+                let t = document.createTextNode(input.value);
+                
+                let div2 = document.createElement('div');
+                div2.className = 'icons';
+                let icon1 = document.createElement('img');
+                icon1.className = 'right';
+                icon1.setAttribute('src','correct.png');
+                let icon2 = document.createElement('img');
+                icon2.setAttribute('src','false.png');
+
+                p.appendChild(t);
+                div.appendChild(p);
+                div.appendChild(div2)
+                div2.appendChild(icon1);
+                div2.appendChild(icon2);
+                form.before(div);
+
+                icon1.addEventListener('click',function(e){
+                    
+                    e.target.parentElement.parentElement.classList.toggle('color');
+
+                })
+
+                icon2.onclick = function(){
+                    div.remove();
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

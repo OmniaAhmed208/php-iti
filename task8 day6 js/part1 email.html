@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/part1.css">
+</head>
+<body>
+    <div class="container">
+        <form>
+            <input type="text" placeholder="username" id="name">
+            <input type="password" placeholder="password" id="pass">
+            <input type="button" value="Login" id="btn">
+            <p>Not Registered? <span>Create an Account</span></p>
+        </form>
+
+        <div class="result"></div>
+    </div>
+
+    <script>
+
+        let btn = document.querySelector('#btn');
+        let name = document.querySelector('#name');
+        let password = document.querySelector('#pass');
+        let res = document.querySelector('.result');
+
+        btn.addEventListener('click',function(){
+
+            if(name.value == 'admin' && password.value =='123'){
+                res.textContent = "Welcome :)";
+                res.style.color = 'blue';
+            }
+            else{
+                res.textContent = "not regestered :(";
+                res.style.color = 'red';
+            }
+        });
+
+
+
+        // if(name.value == 'admin' && password.value =='123'){
+                
+        //         let p = document.createElement('p');
+        //         p.className = 'accept';
+        //         let text = document.createTextNode('Welcome');
+
+        //         p.appendChild(text);
+        //         res.appendChild(p);
+        //     }
+        //     else{
+        //         let p = document.createElement('p');
+        //         p.className = 'failed';
+        //         let text = document.createTextNode('not registered');
+
+        //         p.appendChild(text);
+        //         res.appendChild(p);
+                
+        //     }
+
+    </script>
+</body>
+</html>

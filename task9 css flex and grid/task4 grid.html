@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+
+    <style>
+        body{background-color: aqua;}
+
+        .container{
+            display: grid;
+            grid-template-rows: repeat(3, 145px);
+            grid-template-columns: 145px 145px 145px;
+            justify-content: center;
+            gap: 2px 2px;
+
+            width: 30%;
+            margin: 94px auto 0;
+            transform: rotate(45deg);
+        }
+
+        .container>div{
+            background-color: #27242a;
+            color: #fff;
+            text-align: center;
+            padding-top: 20px;
+        }
+        
+        .box1{
+            grid-row: span 2;
+            grid-column: span 1;
+        }
+        .box2{
+            grid-row: span 1;
+            grid-column: span 2;
+        }
+        .box3{
+            grid-row: span 1;
+            grid-column: span 1;
+        }
+        .box4{
+            grid-row: span 2;
+            grid-column: span 1;
+        }
+        .box5{
+            grid-row: span 1;
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box1">1</div>
+        <div class="box2">2</div>
+        <div class="box3">3</div>
+        <div class="box4">4</div>
+        <div class="box5">5</div>
+    </div>
+</body>
+</html>

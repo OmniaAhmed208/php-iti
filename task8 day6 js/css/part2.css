@@ -1,0 +1,49 @@
+.container{
+    background-color: #eee;
+    width: 50%;
+    padding: 30px;
+    margin: 30px auto;
+}
+.container .parent{
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    padding: 0 30px 0px;
+}
+
+.container .parent.color{background-color: #adedad;}
+
+.container>div P{font-size: 20px;}
+
+.container .icons{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 0 0 10px 0;
+    margin: -46px 0 0 0;
+}
+
+.container>div img{width: 30px;height: 30px;margin-left: 20px;cursor: pointer;}
+
+.container form{
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container form label{font-size: 20px;}
+
+.container form input{
+    border-radius: 5px;
+    font-size: 20px;
+    border: 0;
+    padding: 7px 30px;
+    margin: 0 0 0px 10px;
+}
+
+.container form input[type='button']{
+    color: #fff;
+    background: #3a8995;
+    cursor: pointer;
+}
