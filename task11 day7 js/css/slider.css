@@ -1,0 +1,60 @@
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 80px;
+    height: 200px;
+}
+
+.container>div{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #a48cc1, #33009b);
+    color: #fff;
+    font-size: 30px;
+    transition: 1s;
+}
+.first{left: 40%;transform: scale(0.8);}
+.second{left: 60%;transform: scale(0.8);}
+.third{left: 20%;transform: scale(0.8);}
+
+.active{z-index: 1;transform: scale(1);}
+
+button{
+    position: absolute;
+    background-color: aqua;
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 999;
+}
+
+.prev{left: 242px;top: 144px}
+.next{right: 207px;top: 144px}
+
+.disabled{
+    opacity: 0.6;
+    cursor: no-drop;
+}
+
+.indicator{
+    display: block;
+    margin: 300px auto;
+}
+.indicator ul{
+    display: flex;
+    list-style: none;
+}
+
+.indicator ul li{
+    margin-left: 10px;
+    width: 32px;
+    height: 6px;
+    cursor: pointer;
+    background: aqua;
+}

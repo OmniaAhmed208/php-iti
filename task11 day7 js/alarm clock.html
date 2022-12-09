@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/clock.css">
+    <title>Alarm</title>
+</head>
+<body>
+
+    <div class="container">
+        <div class="content">
+            <div class="days">
+                <div>sat</div>
+                <div>sun</div>
+                <div>mon</div>
+                <div>tue</div>
+                <div>wen</div>
+                <div>thu</div>
+                <div>fri</div>
+            </div>
+            <img src="img/alarm.png" alt="" class="alarm">
+            <div class="clock">
+                04: 16 : 26
+                <span><sub>PM</sub></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="top">
+        <div class="popup">
+            <img src="img/cancel.png" alt="" class="cancel">
+            <h2>Set Alarm After</h2>
+            <div class="content">
+                <select>
+                    <option value="Hour" selected hidden>Hour</option>
+                </select>
+                <select>
+                    <option value="Minute" selected hidden>Minute</option>
+                </select>  
+                <select>
+                    <option value="AM/PM" selected hidden>AM/PM</option>
+                </select>  
+            </div>
+            
+            <div class="btns">
+                <button class="set">Set</button>
+                <button class="clear">Clear</button>
+            </div>
+        </div>
+    </div>
+
+    <audio src="img/plantasia_alarm.mp3" preload="auto"></audio>
+    
+    <script src="js/clock.js"></script>
+</body>
+</html>
