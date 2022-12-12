@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math ML</title>
+    <script>
+        window.MathJax = {
+          MathML: { extensions: ["mml3.js", "content-mathml.js"] },
+        };
+      </script>
+      <script
+        type="text/javascript"
+        async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=MML_HTMLorMML"
+      ></script>
+
+      <style>
+        .a,.b,.c{position: absolute;font-size: 30px;}
+        .c{top: 60px;left: 170px;}
+        .b{top: 60px; left: 325px;}
+        .a{top: 190px; left: 200px;}
+
+        .MathJax span{font-size: 30px;color: red;}
+
+      </style>
+</head>
+<body>
+    
+
+    <div class="svg">
+        <svg width="300" height="200">
+            <polygon points="100,200,300,200,100,200,300,30,300,200"
+            style="fill:red;stroke:red;stroke-width:5;fill-rule:evenodd;" />
+        </svg>
+    
+        <p class="a">a</p>
+        <p class="b">b</p>
+        <p class="c">c</p>
+    
+        <br><br><br>
+    
+        <p style="font-size:30px">According to pythagoras theorem</p>
+    
+        <math xmlns = "http://www.w3.org/1998/Math/MathML">
+            
+            <mrow>
+               <msup><mi>c</mi></msup>
+               <mo> = </mo>
+    
+               <msqrt>
+                    <msup><mi>a</mi><mn>2</mn></msup>
+                    <mo>+</mo>
+                    <msup><mi>b</mi><mn>2</mn></msup>
+               </msqrt>
+                   
+            </mrow>
+               
+        </math>
+    </div>
+    
+</body>
+</html>

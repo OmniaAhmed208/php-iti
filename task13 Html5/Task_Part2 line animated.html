@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line Animated</title>
+
+    <script>
+        window.MathJax = {
+          MathML: { extensions: ["mml3.js", "content-mathml.js"] },
+        };
+    </script>
+    <script
+        type="text/javascript"
+        async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=MML_HTMLorMML"
+    ></script>
+
+    <style>
+
+        canvas{margin: 40px 30%;}
+
+    </style>
+</head>
+<body>
+    
+    <!-- ================= Canvas ============= -->
+
+    <canvas id="can" width="500" height="500" style="border:1px solid"></canvas>
+
+
+    <script>
+        let canvas= document.getElementById('can');
+        var ctx = canvas.getContext("2d");
+        ctx.strokeStyle = 'red';
+
+        let point = function(x,y){
+            this.startX = x;
+            this.startY = y;
+        }
+
+        let points = [ new point(0,0),
+                       new point(100,100),
+                       new point(200,200),
+                       new point(300,300),
+                       new point(400,400),
+                       new point(500,500),
+                       new point(550,550),
+                    ];
+
+        ctx.moveTo(points[0].startX,points[0].startY);
+
+        let i = 1;
+
+        let animate = setInterval(function(){
+            let point = points[i++];
+            ctx.lineTo(point.startX, point.startY);
+            ctx.stroke();
+
+            if(i >= points.length){
+                alert('animated End');
+                clearInterval(animate);
+            }
+            
+        },500);
+        ctx.stroke();
+
+    </script>
+
+</body>
+</html>

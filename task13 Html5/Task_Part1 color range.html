@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Range</title>
+
+    <style>
+        .color input{margin-left: 40px;margin-top: 20px;}
+        .color p{font-size: 50px;}
+        hr{margin: 50px 0;}
+    </style>
+</head>
+<body>
+
+    <div class="color">
+
+        Red : <input type="range" id="red" min="0" max="255" value="0"> <br>
+        Green : <input type="range" id="green" min="0" max="255" value="0"> <br>
+        Blue : <input type="range" id="blue" min="0" max="255" value="0">
+
+        <p>Change the 3 color range</p>
+
+    </div>
+
+    <script>
+        let red = document.getElementById("red");
+        let green = document.getElementById("green");
+        let blue = document.getElementById("blue");
+        let p = document.querySelector('p');
+
+        function changeColor(){
+            let r = red.value;
+            let g = green.value;
+            let b = blue.value;
+
+            let color = `rgb(${r},${g},${b})`;
+
+            p.style.color = color;
+        };
+
+        red.addEventListener('change',changeColor);
+        green.addEventListener('change',changeColor);
+        blue.addEventListener('change',changeColor);
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video</title>
+    <style>
+        button{cursor: pointer;margin: 0 3px;font-size: 16px;}
+        span:last-of-type{font-size: 20px;}
+    </style>
+</head>
+<body>
+    
+    <video id='vid' src="22.mp4" width="300" height="300"></video>
+
+    <div>
+    
+        <input type="range" min="0" max="100" value="0" step="1" id="moving" style="width: 300px;">
+        <span id="currtime">00:00</span>
+        <span> / </span>
+        <span id="endtime">00:00</span>
+
+
+        <button id="fullscreen" style="padding: 5px;">Full Screen</button>
+
+        <br><br>
+
+        <button id="play">Play</button>
+        <button id="stop">Stop</button>
+        <button id="begin">&lt;&lt;</button>
+        <button id="lt">&lt;</button>
+        <button id="gt">&gt;</button>
+        <button id="finish">&gt;&gt;</button>
+
+        <!-- Sound -->
+        <input type="range" min="0" max="100" value="100" step="1" id="sound">
+        <button id="mute">Mute</button>
+
+        <br><br>
+        
+        <span>speed:</span> <input type="range" min="0" max="100" value="0" step="1" id="speed">
+
+    </div>
+
+    <script src="video.js"></script>
+    
+</body>
+</html>
