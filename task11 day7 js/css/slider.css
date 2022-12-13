@@ -18,11 +18,12 @@
     font-size: 30px;
     transition: 1s;
 }
-.first{left: 40%;transform: scale(0.8);}
-.second{left: 60%;transform: scale(0.8);}
-.third{left: 20%;transform: scale(0.8);}
 
-.active{z-index: 1;transform: scale(1);}
+.left{left: 60%;transform: scale(0.8);}
+
+.right{left: 20%;transform: scale(0.8);}
+
+.active{z-index: 1;transform: scale(1);left: 40%;}
 
 button{
     position: absolute;
@@ -30,15 +31,18 @@ button{
     border-radius: 50%;
     border: 0;
     cursor: pointer;
-    padding: 10px;
+    padding: 10px 15px;
     z-index: 999;
+    font-weight: bold;
 }
 
-.prev{left: 242px;top: 144px}
-.next{right: 207px;top: 144px}
+.prev, .next{top:144px;font-size: 20px;}
+
+.prev{left: 242px;}
+.next{right: 207px;}
 
 .disabled{
-    opacity: 0.6;
+    opacity: 0.3;
     cursor: no-drop;
 }
 
