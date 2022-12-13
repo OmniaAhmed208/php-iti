@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/email.css">
+</head>
+<body>
+    <div class="container">
+        
+        <form>
+
+            <input type="text" placeholder="example@bb.com" id="name" title="Enter email Valid" required>
+
+            <input type="password" placeholder="password must start Capital letter" 
+            title="password must at least 5 letter and must start Capital letter" id="pass" >
+
+            <input type="button" value="Login" id="btn">
+
+            <p>Not Registered? <span>Create an Account</span></p>
+
+        </form>
+
+        <div class="result"></div>
+    </div>
+
+    <script>
+
+        let btn = document.querySelector('#btn');
+        let name = document.querySelector('#name');
+        let password = document.querySelector('#pass');
+        let res = document.querySelector('.result');
+
+        btn.addEventListener('click',function(){
+
+            if(name.value.match(/\w+@\w+.\w+/ig) && password.value.match(/([A-Z]+\w*\d*).{5,}/ig)){
+                res.textContent = "Welcome :)";
+                res.style.color = 'blue';
+            }
+            else{
+                res.textContent = `not regestered :(  please Hover on input`;
+                res.style.color = 'red';
+            }
+        });
+
+
+console.log('A@ff3'.match(/\w+\d+/ig))
+
+    </script>
+</body>
+</html>

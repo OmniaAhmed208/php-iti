@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+    <link rel="stylesheet" href="css/ajax.css">
+</head>
+<body>
+
+    <div id="div1"></div>
+
+    <script>
+        alert('wait until images loading');
+
+        let div = document.getElementById('div1');
+
+        fetch("https://reqres.in/api/users?page=2").then(
+            (result)=>{
+                // console.log(result);
+                let myData = result.json();
+                console.log(myData);
+                return myData
+            }
+        ).then ((myData)=>{
+            // console.log(myData.data)
+            for(let i=0; i < myData.data.length ; i++){
+                    let div2 = document.createElement('div');
+                    div2.className = 'divInside';
+                    let span1 = document.createElement('span');
+                    span1.textContent = 'Name';
+                    let span = document.createElement('span');
+                    span.textContent = `: ${myData.data[i].first_name}`;
+
+                    let br = document.createElement('br');
+                    
+                    let img1 = document.createElement('img');
+                    img1.setAttribute('src',myData.data[i].avatar)
+
+
+
+                    div2.appendChild(span1);
+                    div2.appendChild(span);
+                    div2.appendChild(br);
+                    div2.appendChild(img1);
+
+                    div.appendChild(div2);                
+            }
+        })
+
+
+
+        // ======================= OROROROROROROROROROR ===================
+        
+        // let div = document.getElementById('div1')
+
+        // let data = function(apiLink){
+        //     return new Promise((res,rej)=>{
+        //         let myReq = new XMLHttpRequest();
+        //         myReq.onload = function(){
+        //             if(this.readyState === 4 && this.status === 200){
+        //                 res(JSON.parse(this.responseText));
+        //             }
+        //             else{
+        //                 rej(Error("No Data"))
+        //             }
+        //         }
+        //         myReq.open("Get",apiLink);
+        //         myReq.send();
+        //     })
+        // }
+
+        // data("https://reqres.in/api/users?page=2").then(
+        //     (result)=> {
+        //         // console.log(result.data)
+                
+        //         for(let i=0; i < result.data.length ; i++){
+        //             let div2 = document.createElement('div');
+        //             div2.className = 'divInside';
+        //             let span1 = document.createElement('span');
+        //             span1.textContent = 'Name';
+        //             let span = document.createElement('span');
+        //             span.textContent = `: ${result.data[i].first_name}`;
+
+        //             let br = document.createElement('br');
+                    
+        //             let img1 = document.createElement('img');
+        //             img1.setAttribute('src',result.data[i].avatar)
+
+
+
+        //             div2.appendChild(span1);
+        //             div2.appendChild(span);
+        //             div2.appendChild(br);
+        //             div2.appendChild(img1);
+
+        //             div.appendChild(div2);
+
+        //             // console.log(result.data[i].first_name);
+        //             // console.log(result.data[i].avatar);
+
+        //         }
+        //     }
+        // )
+
+
+    </script>
+</body>
+</html>
