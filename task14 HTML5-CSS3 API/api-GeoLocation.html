@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    
+    <style>
+        button{font-size: 20px;padding: 5px 20px;}
+        span{font-size: 20px; font-weight: bold;margin-right: 10px;color: green;}
+        input{margin-bottom: 10px;}
+        div{padding: 10px;margin: 10px 0;font-size: 20px; background-color: #eee;}
+        hr{margin: 50px 0;}
+    </style>
+</head>
+<body>
+    <h2>GeoLocation Api</h2>
+    <button id="geo">Detect Location</button>
+
+    <hr>
+    <!-- ================= web storage =============== -->
+    <h2>Web Storage</h2>
+    <span>Local Storage</span> Name <input type="text" id="name"> <br>
+    <span>Session Storage</span> Age <input type="text" id="age"> <br>
+    <button id="showbtn">show</button> 
+    <div id="showdata"></div>
+
+    <hr>
+     <!-- ================= web worker =============== -->
+    <h2>Api Web Worker</h2>
+    <button id="sum">Sum</button>
+    <button id="bg">backgrond</button>
+
+    <script>
+        // ================ geolocation =============
+
+        let geoBtn = document.getElementById('geo');
+
+        geoBtn.onclick = ()=>{
+            navigator.geolocation.getCurrentPosition(showPosition,showError);
+        }
+
+        function showPosition(e){
+            console.log(e);
+            console.log(e.coords.latitude);
+            console.log(e.coords.longitude);
+            let latitude = e.coords.latitude;
+            let longitude = e.coords.longitude;
+
+            location.assign(`https://www.google.pt/maps/@${latitude},${longitude}`);
+        }
+
+        // (x[y,z]) => y & z are option
+        // y detects error and z is option object
+
+        function showError(x){ // y
+            switch (x.code){
+                case 0:
+                    console.log(x.message, x.code);
+                    break;
+                case 1:
+                    console.log(x.message, x.code);
+                    break;
+                case 2:
+                    console.log(x.message, x.code);
+                    break;
+                case 3:
+                    console.log(x.message, x.code);
+                    break;    
+            }
+        }
+
+        // var option = { timeout = 0 } // z
+
+        // =============== web storage ================
+        let name = document.getElementById('name');
+        let age = document.getElementById('age');
+        let showBtn = document.getElementById('showbtn');
+        let div = document.getElementById('showdata');
+
+        showBtn.addEventListener('click',()=>{
+            localStorage.setItem('name',name.value);
+            window.sessionStorage.setItem('age',age.value);
+            
+            div.innerHTML += `Local value: ${localStorage.getItem('name')} <br> 
+            Session value: ${sessionStorage.getItem('age')}`;
+        });
+
+
+        // =================== web worker ==================
+         
+        var worker = new Worker("worker.js");
+        let sum = document.getElementById('sum');
+        let bg = document.getElementById('bg');
+
+        sum.onclick = ()=>{
+            // let sum = 0;
+            // for(let i=0; i<1000000000; i++){
+            //     sum += i;
+            // }
+            // alert(sum);
+            worker.postMessage("");
+        }
+
+        worker.onmessage = function(message){
+            console.log(message);
+            alert(message.data)
+        }
+
+        bg.onclick = ()=>{
+            if(document.body.style.backgroundColor !== "gray"){
+                document.body.style.backgroundColor = 'gray';
+            } else{
+                document.body.style.backgroundColor = 'pink';
+            }
+        }
+    </script>
+</body>
+</html>

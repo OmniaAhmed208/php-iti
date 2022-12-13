@@ -1,0 +1,82 @@
+h1,h2{text-align: center;}
+
+hr{margin: 30px 0;}
+
+/* ==============  task1 hover on image ============= */
+img{
+    width: 500px;
+    height: 400px;
+    transition: all 3s ease-in-out;
+}
+
+img:hover{opacity: 0;}
+
+/* ================== task2 Form ===================== */
+form input{
+    border: 2px solid red;
+    padding: 10px 45px 14px 20px;
+    font-size: 18px;
+    outline: red;
+}
+
+form input:valid{
+    border: 2px solid green;
+    outline: green;
+    margin-bottom: 20px;
+}
+
+form input[type='email']:valid + h3{display: none;}
+
+form input[type='text']:valid + h3{display: none;}
+
+form button{
+    font-size: 20px;
+    padding: 6px 20px;
+}
+
+/* ===================  task3 Hover Animation ================ */
+div:last-of-type{
+    margin-bottom: 100px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.change{
+    padding: 15px 100px;
+    border-radius: 25px;
+    font-size: 20px;
+    border: 0;
+    box-shadow: 2px 2px 10px #000;
+    cursor: pointer;
+}
+
+.change:hover{animation: changing 3s infinite ease-in-out;}
+
+@keyframes changing {
+    0%{
+        color: aqua;
+        background-color: blueviolet;
+        box-shadow: 2px 2px 14px aqua;  
+    }
+    25%{
+        color: red;
+        background-color: rgb(220, 235, 16);
+        box-shadow: 2px 2px 14px red; 
+    }
+    50%{
+        color: rgb(224, 211, 211);
+        background-color: rgb(20, 20, 20);
+        box-shadow: 2px 2px 14px rgb(4, 0, 255);  
+    }
+    75%{
+        color: rgb(17, 0, 255);
+        background-color: rgb(205, 211, 120);
+        box-shadow: 2px 2px 14px rgb(60, 255, 0); 
+    }
+    100%{
+        color: rgb(174, 0, 255);
+        background-color: rgb(16, 235, 100);
+        box-shadow: 2px 2px 14px rgb(233, 23, 187);
+    }
+}
