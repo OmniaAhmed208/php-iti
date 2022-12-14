@@ -1,8 +1,6 @@
 let next = document.querySelector('.next');
 let prev = document.querySelector('.prev');
 let slides= document.querySelectorAll('.container>div');
-let slideLeft= document.querySelectorAll('.left');
-let slideRight= document.querySelectorAll('.right');
 let active= document.querySelector('.active');
 
 let counter = slides.length;
@@ -16,7 +14,8 @@ function nextFun(){
         return false;
     } else{
         currentSlide--;
-        
+
+        right();
         check();
     }
 }
@@ -27,8 +26,27 @@ function prevFun(){
     } else{
         currentSlide++;
         
+        left();
         check();
     }
+}
+
+function right(){
+    slides.forEach(slide=>{
+        if(slide.classList.contains('active')){
+            slide.classList.remove('left','right');
+            slide.classList.add('right');
+        }
+    });
+}
+
+function left(){
+    slides.forEach(slide=>{
+        if(slide.classList.contains('active')){
+            slide.classList.remove('left','right');
+            slide.classList.add('left');
+        }
+    });
 }
 
 function check(){
@@ -36,28 +54,24 @@ function check(){
         slide.classList.remove('active');
     });
 
-    slideLeft.forEach(slide=>{
-        if(slide.getAttribute('data-set') == currentSlide){
-            slide.classList.add('active')
-        }
-        
-        if(currentSlide == 1){
-                next.classList.add('disabled');
-        }   else{
-               next.classList.remove('disabled')
-            }
-    });
-
-    slideRight.forEach(slide=>{
+    slides.forEach(slide=>{
         if(slide.getAttribute('data-set') == currentSlide){
             slide.classList.add('active');
         }
         
+        if(currentSlide == 1){
+            next.classList.add('disabled');
+        }   
+        else{
+            next.classList.remove('disabled');
+        }
+
         if(currentSlide == slides.length){
-                prev.classList.add('disabled');
-        }   else{
-               prev.classList.remove('disabled')
-            }
+            prev.classList.add('disabled');
+        }   
+        else{
+            prev.classList.remove('disabled');
+        }
     });
 }
 
