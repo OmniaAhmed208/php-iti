@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+    <style>
+        .task1{display: flex;flex-direction: column;justify-content: center;align-items: center;}
+        img{width: 500px;height: 350px;}
+        .task1 button{padding: 20px 60px;font-size: 22px;margin: 20px 0;background-color: rgb(69, 102, 139);
+            border: 0;outline: none;cursor: pointer;border-radius:5px;color: #fff;}
+
+        h1:last-of-type{text-align: center;}    
+        .task2{display: flex;}  
+        .task2 div{margin:0 20px 20px; display: flex;flex-direction: column;align-items: center;}
+        .task2 img{width: 400px;cursor: pointer;}   
+        .task2 p{padding: 20px 20px;background-color: #ddd;width: 300px;display: none;}
+    </style>
+</head>
+<body>
+    <div class="task1">
+        <h1>Task_1</h1>
+        <img id="img" src="img/app1.webp" alt="">
+        <br> 
+        <button>Stop</button>
+    </div>
+
+    <h1>Task_2</h1>
+    <div class="task2">
+        <div class="div">
+            <img src="img/app1.webp" alt="">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+        <div class="div">
+            <img src="img/fur3.webp" alt="">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+        <div class="div">
+            <img src="img/app3.jpg" alt="">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.2.js" integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4=" crossorigin="anonymous"></script>
+    
+    <script>
+
+        // task1
+        var arr = ["img/app1.webp","img/52268.jpg","img/app3.jpg","img/fur3.webp","img/lap.webp"];
+
+        $(function(){
+
+            function animate(index){
+                $('.task1 img').attr('src',arr[index]);
+            }
+
+            let i = -1;
+
+            let change = setInterval(function(){
+
+                let index = i++;
+
+                animate(index);
+
+                if(index > arr.length){
+                    i = -1;
+                }
+
+            },200);
+
+            $('.task1 button').on('click',function(){
+                clearInterval(change);
+            });
+
+
+
+            //task2
+            $('.task2 img').on('click',function(){
+                $(this).next().slideToggle();
+            });
+
+        });
+        
+    </script>
+</body>
+</html>
