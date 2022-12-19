@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Lab2</title>
+    <link rel="stylesheet" href="css.css">
+    <!-- jquery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="responsiveslides.min.js"></script>
+
+</head>
+<body>
+    <div class="task1">
+        <div class="black">The Black Hole</div>
+        <div class="moving"><img src="tom-and-jerry.png"></div>
+    </div>
+    <hr>
+    <!-- Task 2 -->
+    <div class="task2">
+        <div class="all">
+            <div class="base">
+                <input type="text">
+                <button>Add</button>
+            </div>
+            <div class="allLists"></div>
+        </div>
+    </div>
+
+    <!-- jquery-ui -->
+    <script src="jquery-ui.js"></script>
+    <script src="jquery-ui.min.js"></script>
+
+    <script>
+
+        $( function() {
+            $( ".moving" ).draggable();
+            $( ".black" ).droppable({
+                drop: function( event, ui ) {
+                    $( '.moving' )
+                    .addClass( "hidden" )
+                }
+            });
+        });
+
+        // ======= task2 ============
+
+        $( function(){
+            $('.base button').on('click',function(){
+                let value = $('.base input').val();
+                $('.allLists').append(` <div class="list">${value}
+                                            <div class='btn'>
+                                                <button class="select">select</button>
+                                                <button class="del">Delete</button>
+                                            </div>
+                                            </div>`
+                                    );
+            });
+
+            $('.allLists').on('click','.select',{},function(e){ // when click on select button
+                $(this).parent().parent().toggleClass('color');
+            });
+
+            $('.allLists').on('click','.del',{},function(e){ // when click on delete button
+                $(this).parent().parent().remove();
+            });
+        });
+
+    </script>
+</body>
+</html>

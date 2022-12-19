@@ -1,0 +1,66 @@
+hr{margin: 50px 0;}
+.task1{display: flex;justify-content: end;padding: 0 20px;}
+        
+.black{
+    margin-inline-end: auto;
+    width: 200px;height: 200px;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #000;
+    padding: 50px;
+    font-size: 30px;
+    text-align: center;
+}
+        
+.moving{width: 180px;height: 230px;background-color: rgb(255, 251, 0);border-radius: 50px;}
+        
+.moving img{width: 180px;height: 180px;}
+        
+.hidden{display: none;}
+
+/*task 22222222  */
+
+.task2{display: flex;justify-content: center;margin-top: 50px;}
+        
+.all{
+    background-color: #ddd;
+    padding: 20px;
+    width: 60%;
+}
+        
+.task2 .base input{
+    font-size: 20px;
+    padding: 10px 20px;
+    outline: none;
+    border: none;
+    border-radius: 20px;
+    width: 80%;
+}
+        
+.task2 button{
+    margin-left: 15px;
+    font-size: 17px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+.task2 .base button{background-color: rgb(255, 251, 0);}
+        
+.task2 .allLists{width: 100%;display: contents;}
+        
+.task2 .allLists .list{
+    width:95%;
+    float:left;
+    background-color: #fff;
+    font-size: 20px;
+    padding: 15px 20px 5px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+        
+.task2 .allLists button{margin-top: 13px;}
+        
+.task2 .allLists .btn{float: right;margin-top: -22px;}
+
+.color{background-color: rgb(255, 251, 0) !important;}
