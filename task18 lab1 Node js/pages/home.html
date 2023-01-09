@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        nav{font-size: 30px;padding: 0 45px;}
+        nav .active{color: #1ba230}
+        nav ul{list-style: none;display: flex;flex-direction: row;justify-content: center;}
+        nav ul a{text-decoration: none;color: #000;font-weight: bold;margin-left: 60px;}
+        nav ul a:hover{color: #1ba230}
+
+        .form{padding: 50px 0 0 45px;}
+        .form h2{font-size: 35px;}
+        .form input{font-size: 20px;padding: 13px 10px;margin-bottom: 30px;border: 0;outline: 0;width: 25%;
+        box-shadow: inset 2px 2px 11px #b1ad95, inset -2px -2px 7px #f7f2f2;}
+        .form input[type='submit']{width: 26.5%;padding: 13px 32px;background: #1ba230;color: #fff;font-weight: bold;
+            box-shadow: 3px 3px 6px #797474;cursor: pointer;}
+    </style>
+</head>
+<body>
+    
+    <nav>
+        <ul>
+            <li><a href="/home" class="active">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="form">
+        <h2>Login Form</h2>
+        <form action="login" method="post">
+            <input type="text" name="name" placeholder="enter name"><br>
+            <input type="text" name="email" placeholder="enter your Email"><br>
+            <input type="password" name="password" placeholder="enter password"><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+</body>
+</html>
