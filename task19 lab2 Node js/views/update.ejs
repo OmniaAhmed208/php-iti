@@ -1,0 +1,20 @@
+<h1>Update</h1>
+    <form action="/update" method="post">
+        <table>
+            <tr>
+                <td><input type="hidden" name="id" value="<%= bookInfo.id %>"></td>
+            </tr>
+            <tr>
+                <td>Name of the book</td>
+                <td><input type="text" name="bookName" value="<%= bookInfo.bookName %>"></td>
+            </tr>
+            <tr>
+                <td>Name of the Auther</td>
+                <td><input type="text" name="auther" value="<%= bookInfo.auther %>"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Update"></td>
+            </tr>
+        </table>
+    </form>
+    <a href='/home'>Home</a>

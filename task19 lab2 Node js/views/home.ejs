@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .show th,.show td{padding: 5px 30px;}
+        </style>
+    </head>
+    <body>
+        <form>
+            <input type="text" name='search' value='<%= search%>'/>
+            <input type="submit" value='search'/>
+        </form>
+
+        <table class="show">
+            <tr>
+                <th>Id</th>
+                <th>Book</th>
+                <th>Auther</th>
+                <th>Action</th>
+            </tr>
+            <% for (let item of fbooks) { %>
+            <tr>
+                <td><%= item.id %></td>
+                <td><%= item.bookName%></td>
+                <td><%= item.auther%></td>
+                <td>
+                    <a href="/update?id=<%=item.id%>" >Edit</a> 
+                    <a href="/delete?id=<%=item.id%>" >Delete</a>
+                </td>
+            </tr>
+            <% } %>
+        </table>
+
+        <hr>
+        
+        <h1>Add Books</h1>
+        <form action="/addbooks" method="post">
+            <table>
+                <tr>
+                    <td>Name of the book</td>
+                    <td><input type="text" name="bookName"></td>
+                </tr>
+                <tr>
+                    <td>Name of the Auther</td>
+                    <td><input type="text" name="auther"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="add"></td>
+                </tr>
+            </table>
+        </form>
+        <a href="/addbooks">addbooks</a>
+
+    </body>
+    </html>
