@@ -1,0 +1,54 @@
+
+body{padding:20px}
+
+a{all: unset;}
+
+/*_____________ Regester page _____________*/
+
+.regester h1{font-family: sans-serif;}
+.regester input[type='text']{
+    font-size: 17px;
+    padding: 5px;
+    width: 20%;
+}
+.regester input[type='ardio']{margin-right: 10px;}
+.regester input[type='checkbox']{margin: 20px 10px 20px 0;}
+.regester button,
+.regester input[type='submit'],
+.regester input[type='reset'],
+.details .info button,
+.view button{
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    border: 0;
+    padding: 10px 20px;
+    background: #59affb;
+    border-radius: 5px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+/* ___________Details page____________*/
+
+.details .info{
+    display: grid;
+    grid-template-columns: 300px 200px;
+}
+.details .info button{
+    margin: 17px;
+    grid-column-end: none;
+    place-self: self-end;}
+.details .info h1{font-family: sans-serif;}
+.details table{border: 1px solid #cbcbcb;margin:30px auto}    
+.details th,td{padding: 15px 30px;text-align: center;}
+.details img{width:20px;cursor: pointer;padding:0 3px} 
+
+/* __________ view page ________ */
+.view{font-family: sans-serif;}
+.view p{
+    width: 20%;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: inset 3px 5px 30px #eee, inset -2px -2px 2px #000;    
+}
